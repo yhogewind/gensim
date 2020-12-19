@@ -393,7 +393,7 @@ class DtmModel(utils.SaveLoad):
             self.lambda_[t, :] = np.loadtxt(self.fout_prob().format(i=topic))
             self.obs_[t, :] = np.loadtxt(self.fout_observations().format(i=topic))
         # cast to correct shape, lambda[5,10,0] is the proportion of the 10th
-        # topic in doc 5 at time 0
+        # topic in term 5 at time 0
         self.lambda_.shape = (self.num_topics, self.num_terms, len(self.time_slices))
         self.obs_.shape = (self.num_topics, self.num_terms, len(self.time_slices))
         # extract document influence on topics for each time slice
